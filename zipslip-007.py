@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 import os, sys
-import tarfile,colored
+import tarfile
+from termcolor import colored
 import zipfile,argparse
 
 def getArguments():

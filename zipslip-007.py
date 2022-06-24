@@ -30,7 +30,7 @@ def main():
     args = getArguments()
     payloadFile = args.payloadFile
     outputFile = args.outputFile
-    fileType = args.fileType
+    # fileType = args.fileType
     depth = args.depth
     path = args.path or ""
     targetOS = args.targetOS

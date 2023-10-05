@@ -26,8 +26,8 @@ def getArguments():
 
 def createZip(payloadFile,outputFile,traversalPath,completeDir):
     zf = zipfile.ZipFile(outputFile, "w")
-    zf.write(payloadFile, traversalPath)
-    # zf.writestr("File Content", "filename")    #Add files directly
+    zf.write(payloadFile, traversalPath)         #zf.write(FileToCopy,filenameInsideZip)
+    # zf.writestr("File Content", "filename")    #zf.writestr(filenameInsideZip,"Content String")   #Add files directly
 
     if completeDir:
         for foldername, subfolders, filenames in os.walk(completeDir):
